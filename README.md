@@ -40,6 +40,21 @@ All manual test cases (including positive, boundary, and negative scenarios like
     * **CRITICAL FAILURE:** The system allows users to **complete the checkout process with an empty cart** (TC-O-002 Fail).
     * **MAJOR FAILURE:** Functional failures were found during **Add to Cart** and **Checkout** when using the specialized `problem_user` (TC-C-004 Fail).
 
+### 2. Automation (Playwright)
+
+The core user story ("Happy Path Purchase") was automated using Playwright.
+
+* **Best Practice:** The code is structured using the **Page Object Model (POM)** for high **readability and maintainability**, as required by the evaluation criteria.
+* **Location:** The code is located in `sauce-assessment/web-app-testing/`.
+* **Flow Covered:** Login -> Add Item -> Go to Cart -> Enter Checkout Info -> Finish Purchase -> Assert Success Message.
+
+#### Running the Automation Script
+
+1.  **Clone the Repository:** `git clone [Your Repository URL]`
+2.  **Change Directory** Navigate to the project `cd sauce-assessment`.
+3.  **Install Dependencies:** Navigate to the project root and run `npm install`.
+4.  **Run the Test:** `npx playwright test web-app-testing/purchase.spec.ts`
+
 ---
 
 
