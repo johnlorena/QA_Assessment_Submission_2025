@@ -21,4 +21,25 @@ The goal of this assessment was to demonstrate core testing capabilities, includ
 | Screenshots/Logs of Execution | To-do | `screenshots/` |
 | Professional Presentation/Walkthrough | In Progress | **This README.md** |
 
+That's a necessary update! Since you executed the manual tests and found critical flaws in the Checkout flow, your summary needs to be corrected to reflect those findings accurately and professionally.
+
+Here is the updated "Manual Testing Summary" for your `README.md`, followed by the guidance for the Playwright Automation section.
+
+---
+
+## 💻 Part 1: Web Application Testing (SauceDemo)
+
+### 1. Manual Testing Summary
+
+All manual test cases (including positive, boundary, and negative scenarios like locked user login and empty cart checkout) were executed. The strategy focused on high coverage to fulfill the **Test Case Quality** criteria.
+
+* **Test Case Document:** [Link to your Test Case Google Sheet/Excel export]
+* **Result:** **Two critical functional defects** were identified in the core checkout flow, and several other major/minor issues were found (e.g., login message overlap, `problem_user` data integrity).
+* **Key Findings:**
+    * The **Happy Path Purchase** (TC-O-001) **Passed**.
+    * **CRITICAL FAILURE:** The system allows users to **complete the checkout process with an empty cart** (TC-O-002 Fail).
+    * **MAJOR FAILURE:** Functional failures were found during **Add to Cart** and **Checkout** when using the specialized `problem_user` (TC-C-004 Fail).
+
+---
+
 
