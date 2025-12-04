@@ -28,6 +28,7 @@ The project is structured to easily locate all required deliverables:
 | Deliverable | Status | Location |
 | :--- | :--- | :--- |
 | Documented Test Cases (Web & API) | ✅ Complete | `documentation/test_cases.xlsx` |
+| Postman Export  API) | ✅ Complete | `api-testing/`(Contains the JSONPlaceholder ) |
 | Bug Reports (if any) | ✅ Complete | `documentation/bug_reports.md` (Contains the JSONPlaceholder API risk) |
 | Automation Script (Playwright) | ✅ Complete| `web-app-testing/` |
 | Professional Presentation/Walkthrough | ✅ Complete | **This README.md** |
