@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "e8671d00-19c7-426f-9f3a-b27da6908ed0",
+		"name": "QA Assessment - JSONPlaceholder API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50563832",
+		"_collection_link": "https://johnlorena-7657405.postman.co/workspace/JohnLorena's-Workspace~eadc6568-bae4-4c76-8c67-aab31b37c73f/collection/50563832-e8671d00-19c7-426f-9f3a-b27da6908ed0?action=share&source=collection_link&creator=50563832"
+	},
+	"item": [
+		{
+			"name": "GET /users (Retrieve All)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /users/1 (Retrieve Specific)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/999",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /posts (Create)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test 1: Check for the 201 Created status\r",
+							"pm.test(\"Status code is 201 Created\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"// Test 2: Check that the response contains a new 'id'\r",
+							"pm.test(\"Response contains a new ID\", function () {\r",
+							"    pm.expect(pm.response.json()).to.have.property('id');\r",
+							"});\r",
+							"\r",
+							"// Test 3: Check that the returned title matches the sent title\r",
+							"// Note: We access the sent data using pm.request.body\r",
+							"pm.test(\"Returned title matches request title\", function () {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    const requestBody = JSON.parse(pm.request.body.raw);\r",
+							"    pm.expect(responseBody.title).to.equal(requestBody.title);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"title\": \"New Post Title\", \"body\": \"This is a new test post.\", \"userId\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /posts/1 (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 1, \"title\": \"UPDATED Title\", \"body\": \"The entire content has been replaced.\", \"userId\": 1}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

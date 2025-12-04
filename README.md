@@ -10,20 +10,28 @@ The goal of this assessment was to demonstrate core testing capabilities, includ
 3.  Executing and documenting API tests using Postman, including assertions and negative testing.
 4.  Providing professional documentation and clear bug reporting.
 
+## Repository Structure
+
+The project is structured to easily locate all required deliverables:
+
+| Folder/File | Description | Deliverable Covered |
+| :--- | :--- | :--- |
+| `web-app-testing/` | Contains the Playwright automation code. | Automation Script (Playwright) |
+| `api-testing/` | Contains the Postman Collection and documentation. | API Testing |
+| `documentation/` | Contains the formal test case matrix and bug reports. Screenshots | Test Documentation, Bug Reports |
+
+---
+
 
 ## Deliverables Checklist
 
 | Deliverable | Status | Location |
 | :--- | :--- | :--- |
-| Documented Test Cases (Web & API) | To-do | `documentation/test_cases.xlsx` |
-| Bug Reports (if any) | To-do | `documentation/bug_reports.md` (Contains the JSONPlaceholder API risk) |
-| Automation Script (Playwright) | To-do| `web-app-testing/` |
-| Screenshots/Logs of Execution | To-do | `screenshots/` |
-| Professional Presentation/Walkthrough | In Progress | **This README.md** |
-
-That's a necessary update! Since you executed the manual tests and found critical flaws in the Checkout flow, your summary needs to be corrected to reflect those findings accurately and professionally.
-
-Here is the updated "Manual Testing Summary" for your `README.md`, followed by the guidance for the Playwright Automation section.
+| Documented Test Cases (Web & API) | ✅ Complete | `documentation/test_cases.xlsx` |
+| Bug Reports (if any) | ✅ Complete | `documentation/bug_reports.md` (Contains the JSONPlaceholder API risk) |
+| Automation Script (Playwright) | ✅ Complete| `web-app-testing/` |
+| Screenshots/Logs of Execution | ✅ Complete | `screenshots/` |
+| Professional Presentation/Walkthrough | ✅ Complete | **This README.md** |
 
 ---
 
@@ -50,11 +58,28 @@ The core user story ("Happy Path Purchase") was automated using Playwright.
 
 #### Running the Automation Script
 
-1.  **Clone the Repository:** `git clone [Your Repository URL]`
+1.  **Clone the Repository:** `git clone https://github.com/johnlorena/QA_Assessment_Submission_2025.git`
 2.  **Change Directory** Navigate to the project `cd sauce-assessment`.
 3.  **Install Dependencies:** Navigate to the project root and run `npm install`.
 4.  **Run the Test:** `npx playwright test web-app-testing/purchase.spec.ts`
 
 ---
+## 🌐 Part 2: API Testing (JSONPlaceholder)
 
+The API testing was performed using Postman (or an equivalent API client) and focused on rigorous testing of status codes, data integrity, and error handling.
 
+### 1. API Test Cases & Assertions
+
+All four required endpoints were tested using Positive, Negative, and Edge cases.
+
+* **Location:** See **`api-testing/API_Testing_Documentation.md`** for detailed request/response breakdowns and analysis.
+* **Postman Collection:** `api-testing/QA_Assessment_API_Collection.json`
+
+| Endpoint | Method | Case Focus | Key Assertion |
+| :--- | :--- | :--- | :--- |
+| `/users` | GET | Retrieval | Status **200**, Response is an **Array**, and contains expected properties. |
+| `/users/id` | GET | **Negative/Edge** | Invalid ID returns **404 Not Found**. |
+| `/posts` | POST | **Negative** | Missing required fields (e.g., `title`) returns the response status. (Note: JSONPlaceholder behavior observed and documented). |
+| `/posts/id` | PUT | **Data Integrity** | Status **200**, and the updated fields in the response **match** the requested payload. |
+
+---
