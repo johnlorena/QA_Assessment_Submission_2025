@@ -30,7 +30,6 @@ The project is structured to easily locate all required deliverables:
 | Documented Test Cases (Web & API) | ✅ Complete | `documentation/test_cases.xlsx` |
 | Bug Reports (if any) | ✅ Complete | `documentation/bug_reports.md` (Contains the JSONPlaceholder API risk) |
 | Automation Script (Playwright) | ✅ Complete| `web-app-testing/` |
-| Screenshots/Logs of Execution | ✅ Complete | `screenshots/` |
 | Professional Presentation/Walkthrough | ✅ Complete | **This README.md** |
 
 ---
